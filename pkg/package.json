@@ -1,0 +1,16 @@
+{
+  "name": "roadlint-wasm",
+  "type": "module",
+  "description": "WASM adapter for the RoadLint WZDx analyzer",
+  "version": "0.1.0",
+  "files": [
+    "roadlint_wasm_bg.wasm",
+    "roadlint_wasm.js",
+    "roadlint_wasm.d.ts"
+  ],
+  "main": "roadlint_wasm.js",
+  "types": "roadlint_wasm.d.ts",
+  "sideEffects": [
+    "./snippets/*"
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "feed_info": {
+    "update_date": "2020-06-18T15:00:00+02:00",
+    "publisher": "TestDOT",
+    "version": "4.2",
+    "data_sources": [
+      {
+        "data_source_id": "source-1",
+        "organization_name": "Test City 1",
+        "update_date": "2020-06-18T14:00:00-00:00"
+      }
+    ]
+  },
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "id": "utc-negative",
+      "type": "Feature",
+      "properties": {
+        "core_details": {
+          "data_source_id": "source-1",
+          "event_type": "work-zone",
+          "road_names": ["I-1"],
+          "direction": "northbound",
+          "creation_date": "2020-06-18T13:00:00Z",
+          "update_date": "2020-06-18T15:00:00+02:00"
+        },
+        "start_date": "2020-06-18T15:00:00+02:00",
+      "end_date": "2020-06-19T15:00:00+00:00",
+        "vehicle_impact": "some-lanes-closed",
+        "location_method": "channel-device-method",
+        "is_start_date_verified": false,
+        "is_start_position_verified": false,
+        "is_end_date_verified": false,
+        "is_end_position_verified": false
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [[-93.7, 41.6], [-93.6, 41.7]]
+      }
+    }
+  ]
+}

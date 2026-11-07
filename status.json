@@ -1,0 +1,11 @@
+{
+  "publication": "roadlint-monitor",
+  "mode": "scheduled-snapshot",
+  "source_id": "wsdot",
+  "source_url": "https://wzdx.wsdot.wa.gov/api/v4/WorkZoneFeed",
+  "published_at": "2026-11-07T08:31:32.649427+00:00",
+  "available": true,
+  "sha256": "d1686f5f44bd0a4e290923d8b62b85565b93e889f63eba713d9697cc08041ddc",
+  "fetched_at": "2026-11-07T08:31:32.583804+00:00",
+  "feature_count": 432
+}

@@ -1,0 +1,78 @@
+{
+  "feed_info": {
+    "publisher": "RoadLint synthetic fixture",
+    "version": "4.2",
+    "data_sources": [{"data_source_id": "synthetic"}]
+  },
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "id": "bad-work-zone-properties",
+      "type": "Feature",
+      "properties": {
+        "core_details": {
+          "data_source_id": "synthetic",
+          "event_type": "work-zone",
+          "direction": "northbound",
+          "road_names": ["Synthetic Road"]
+        },
+        "start_date": 1735689600,
+        "end_date": "not-a-date",
+        "beginning_cross_street": 17,
+        "ending_cross_street": "Second Street",
+        "beginning_milepost": -1,
+        "ending_milepost": "12.5",
+        "is_start_date_verified": "yes",
+        "is_end_date_verified": true,
+        "is_start_position_verified": true,
+        "is_end_position_verified": false,
+        "work_zone_type": "temporary",
+        "vehicle_impact": "closed-sometimes",
+        "location_method": "survey",
+        "event_status": "open",
+        "restrictions": [
+          {"type": "not-a-restriction", "value": 2}
+        ],
+        "types_of_work": [
+          {"type_name": "not-a-work-type", "is_architectural_change": "yes"}
+        ],
+        "lanes": [
+          {"status": "unknown", "type": "unknown", "order": 0}
+        ],
+        "impacted_cds_curb_zones": [
+          {
+            "cds_curb_zone_ids": [12],
+            "cds_curbs_api_url": "not a uri"
+          }
+        ],
+        "worker_presence": {
+          "are_workers_present": "yes",
+          "method": "telepathy",
+          "worker_presence_last_confirmed_date": "yesterday",
+          "confidence": "certain",
+          "definition": ["humans-in-right-of-way", "humans-in-right-of-way", "unknown"]
+        }
+      },
+      "geometry": {"type": "LineString", "coordinates": [[1, 2], [3, 4]]}
+    },
+    {
+      "id": "bad-detour-properties",
+      "type": "Feature",
+      "properties": {
+        "core_details": {
+          "data_source_id": "synthetic",
+          "event_type": "detour",
+          "direction": "southbound",
+          "road_names": ["Synthetic Detour Road"]
+        },
+        "start_date": "2025-01-01T00:00:00Z",
+        "end_date": "2025-01-02T00:00:00Z",
+        "beginning_milepost": 0,
+        "ending_milepost": 2,
+        "start_date_accuracy": "certain",
+        "end_date_accuracy": "estimated"
+      },
+      "geometry": {"type": "MultiPoint", "coordinates": [[5, 6], [7, 8]]}
+    }
+  ]
+}

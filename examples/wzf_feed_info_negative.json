@@ -1,0 +1,26 @@
+{
+  "feed_info": {
+    "update_date": "not-a-date",
+    "publisher": 7,
+    "contact_name": 42,
+    "contact_email": "not-an-email",
+    "update_frequency": 0,
+    "version": "04.2",
+    "license": "https://example.com/license",
+    "data_sources": [
+      {
+        "data_source_id": 17,
+        "contact_name": 9,
+        "contact_email": "bad-email",
+        "update_frequency": 0,
+        "update_date": "not-a-date",
+        "lrs_type": 5,
+        "lrs_url": "not a uri",
+        "location_verify_method": 6
+      },
+      "not-an-object"
+    ]
+  },
+  "type": "FeatureCollection",
+  "features": []
+}

@@ -1,0 +1,68 @@
+{
+  "feed_info": {"version": "4.2", "data_sources": [{"data_source_id": "source-a"}]},
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "id": "valid-work-zone",
+      "type": "Feature",
+      "properties": {
+        "core_details": {"event_type": "work-zone", "data_source_id": "source-a", "direction": "northbound", "road_names": ["Main Street"]},
+        "start_date": "2026-01-01T00:00:00Z",
+        "end_date": "2026-01-02T00:00:00Z",
+        "vehicle_impact": "some-lanes-closed",
+        "location_method": "sign-method",
+        "is_start_date_verified": true,
+        "is_end_date_verified": true,
+        "is_start_position_verified": false,
+        "is_end_position_verified": false
+      },
+      "geometry": {"type": "LineString", "coordinates": [[1, 2], [3, 4]]}
+    },
+    {
+      "id": "missing-work-zone-fields",
+      "type": "Feature",
+      "properties": {
+        "core_details": {"event_type": "work-zone", "data_source_id": "source-a", "direction": "northbound", "road_names": ["Main Street"]},
+        "start_date": "2026-01-01T00:00:00Z"
+      },
+      "geometry": {"type": "LineString", "coordinates": [[1, 2], [3, 4]]}
+    },
+    {
+      "id": "missing-detour-fields",
+      "type": "Feature",
+      "properties": {
+        "core_details": {"event_type": "detour", "data_source_id": "source-a", "direction": "northbound", "road_names": ["Main Street"]},
+        "start_date": "2026-01-01T00:00:00Z"
+      },
+      "geometry": {"type": "LineString", "coordinates": [[1, 2], [3, 4]]}
+    },
+    {
+      "id": "restriction-not-a-work-zone-branch",
+      "type": "Feature",
+      "properties": {
+        "core_details": {"event_type": "restriction", "data_source_id": "source-a", "direction": "northbound", "road_names": ["Main Street"]}
+      },
+      "geometry": {"type": "LineString", "coordinates": [[1, 2], [3, 4]]}
+    },
+    {
+      "id": "missing-event-type",
+      "type": "Feature",
+      "properties": {
+        "core_details": {"data_source_id": "source-a", "direction": "northbound", "road_names": ["Main Street"]}
+      },
+      "geometry": {"type": "LineString", "coordinates": [[1, 2], [3, 4]]}
+    },
+    {
+      "id": "valid-detour",
+      "type": "Feature",
+      "properties": {
+        "core_details": {"event_type": "detour", "data_source_id": "source-a", "direction": "northbound", "road_names": ["Main Street"]},
+        "start_date": "2026-01-01T00:00:00Z",
+        "end_date": "2026-01-02T00:00:00Z",
+        "is_start_date_verified": true,
+        "is_end_date_verified": true
+      },
+      "geometry": {"type": "LineString", "coordinates": [[1, 2], [3, 4]]}
+    }
+  ]
+}
