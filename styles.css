@@ -30,8 +30,8 @@ button, input, select, textarea { font: inherit; }
 button, .button, .file-picker, summary { -webkit-tap-highlight-color: transparent; }
 button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible, summary:focus-visible { outline: 3px solid rgba(8, 107, 103, .28); outline-offset: 3px; }
 
-.shell { width: min(1160px, calc(100% - 40px)); margin: 0 auto; padding: 22px 0 84px; }
-.app-bar { display: flex; align-items: center; justify-content: space-between; gap: 18px; min-height: 54px; margin-bottom: 72px; }
+.shell { display: flex; width: 100%; flex-direction: column; margin: 0; padding: 22px 24px 84px; }
+.app-bar { display: flex; align-items: center; justify-content: space-between; gap: 18px; min-height: 54px; margin-bottom: 30px; }
 .brand { display: inline-flex; align-items: center; gap: 10px; color: var(--ink); font-weight: 850; letter-spacing: -.02em; text-decoration: none; }
 .brand-mark { display: grid; width: 31px; height: 31px; place-items: center; border-radius: 9px; background: var(--teal); color: #fff; font-size: .72rem; letter-spacing: -.06em; }
 .app-context { display: flex; align-items: center; gap: 10px; color: var(--muted); font-size: .84rem; }
@@ -44,11 +44,11 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
 .local-chip { border-color: rgba(47, 184, 178, .34); color: var(--teal-dark); }
 .chip-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--teal); box-shadow: 0 0 0 3px rgba(47, 184, 178, .14); }
 
-.hero { display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(260px, .65fr); align-items: end; gap: 56px; margin-bottom: 48px; }
+.hero { display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(260px, .65fr); align-items: end; gap: 40px; margin-bottom: 28px; }
 .hero-copy { max-width: 700px; }
 .eyebrow { margin: 0 0 9px; color: var(--teal); font-size: .72rem; font-weight: 850; letter-spacing: .16em; }
 h1, h2, h3, p { margin-top: 0; }
-h1 { max-width: 720px; margin-bottom: 18px; color: var(--ink); font-size: clamp(3.2rem, 8vw, 7rem); line-height: .88; letter-spacing: -.075em; }
+.hero h1 { max-width: 720px; margin-bottom: 18px; color: var(--ink); font-size: clamp(2.75rem, 5.5vw, 5.2rem); line-height: .94; letter-spacing: -.07em; }
 h2 { margin-bottom: 4px; font-size: 1.45rem; line-height: 1.1; letter-spacing: -.035em; }
 h3 { letter-spacing: -.02em; }
 .lede { max-width: 610px; margin-bottom: 25px; color: var(--muted); font-size: 1.08rem; }
@@ -191,19 +191,24 @@ textarea { display: block; width: 100%; min-height: 245px; padding: 15px; resize
 }
 
 @media (max-width: 620px) {
-  .shell { width: min(100% - 24px, 1160px); padding-top: 14px; }
+  .shell { width: 100%; padding: 14px 12px 60px; }
   .app-bar { align-items: flex-start; flex-wrap: wrap; margin-bottom: 48px; }
   .app-context { order: 3; width: 100%; }
   .app-badges { margin-left: auto; }
-  h1 { font-size: clamp(3.1rem, 18vw, 5.2rem); }
+  .hero h1 { font-size: clamp(2.55rem, 12vw, 4rem); }
   .panel, .intake-panel { padding: 19px; }
   .panel-heading { flex-direction: column; gap: 14px; }
   .version-control { width: 100%; }
   select { width: 100%; }
   .workspace-nav { width: 100%; overflow-x: auto; }
   .workspace-nav a { flex: 1 0 auto; }
-  .drop-zone { grid-template-columns: auto 1fr; }
-  .drop-actions { grid-column: 1 / -1; }
+  .intake-panel .drop-zone { flex-wrap: wrap; }
+  .intake-panel .drop-copy { flex: 1 1 150px; }
+  .intake-panel .drop-actions { flex: 1 0 100%; margin-left: 40px; }
+  .intake-panel .drop-actions .button, .intake-panel .drop-actions .file-picker { flex: 1; }
+  .intake-panel .file-name { flex: 1 1 100%; max-width: none; }
+  .intake-panel .url-ingest { grid-template-columns: 1fr; }
+  .intake-panel .url-ingest button { width: 100%; }
   .report-intro { align-items: flex-start; flex-direction: column; gap: 4px; }
   .section-heading { align-items: flex-start; flex-direction: column; gap: 4px; }
   .rule-row { align-items: flex-start; flex-direction: column; }
@@ -233,8 +238,18 @@ textarea { display: block; width: 100%; min-height: 245px; padding: 15px; resize
 }
 
 body { background: var(--paper); color: var(--ink); }
-.shell { width: min(1180px, calc(100% - 40px)); }
-.app-bar { margin-bottom: 42px; }
+.shell { width: 100%; max-width: none; }
+.shell > .app-bar { order: 1; }
+.shell > .hero { order: 2; }
+.shell > .workspace-nav { order: 3; }
+.shell > #input-panel { order: 4; }
+.shell > #live-map-panel { order: 5; }
+.shell > #result-panel { order: 6; }
+.shell > #recovery-panel { order: 7; }
+.shell > #compare-panel { order: 8; }
+.shell > #toast { order: 9; }
+.shell > #runtime-note { order: 10; }
+.app-bar { margin-bottom: 28px; }
 .brand, h1, h2, h3 { color: var(--ink); }
 .brand-mark, .drop-icon { background: var(--teal); color: #061012; }
 .app-context, .lede, .section-lede, .hint, .runtime-note { color: var(--muted); }
@@ -279,6 +294,31 @@ select, textarea, input[type="search"] { border-color: var(--line); background: 
 .drift-row .state { color: var(--teal); }
 .diff-context-changed { border-color: rgba(181, 139, 77, .55); }
 .language-control select { min-height: 32px; padding: 0 27px 0 9px; border-color: rgba(47, 184, 178, .34); border-radius: 7px; background: #0c151a; color: #9be2de; font-size: .72rem; font-weight: 800; }
+
+/* Keep the first action strip compact so the live map remains visible in the
+   first viewport. The full source editor is still available on demand. */
+.intake-panel { padding: 17px 20px; }
+.intake-panel .panel-heading { align-items: center; margin-bottom: 11px; }
+.intake-panel .panel-heading .section-lede { max-width: none; margin-top: 4px; overflow: hidden; font-size: .76rem; text-overflow: ellipsis; white-space: nowrap; }
+.intake-panel .version-control { flex-basis: 116px; }
+.intake-panel .ingest-grid { grid-template-columns: minmax(0, 1fr) minmax(220px, .34fr); gap: 10px; }
+.intake-panel .drop-zone { display: flex; min-height: 60px; align-items: center; gap: 10px; padding: 10px 12px; }
+.intake-panel .drop-icon { flex: 0 0 30px; width: 30px; height: 30px; border-radius: 8px; font-size: 1rem; }
+.intake-panel .drop-copy { min-width: 0; }
+.intake-panel .drop-copy strong { overflow: hidden; font-size: .82rem; text-overflow: ellipsis; white-space: nowrap; }
+.intake-panel .drop-copy span { overflow: hidden; font-size: .68rem; text-overflow: ellipsis; white-space: nowrap; }
+.intake-panel .drop-actions { display: flex; flex: 0 0 auto; flex-wrap: nowrap; gap: 6px; margin-left: auto; }
+.intake-panel .drop-actions .button, .intake-panel .drop-actions .file-picker { min-height: 34px; padding: 0 10px; font-size: .7rem; }
+.intake-panel .file-name { min-width: 0; max-width: 150px; overflow: hidden; font-size: .67rem; text-overflow: ellipsis; white-space: nowrap; }
+.intake-panel .sample-menu { min-height: 60px; padding: 0 13px; }
+.intake-panel .sample-menu summary { overflow: hidden; padding: 18px 0; font-size: .76rem; text-overflow: ellipsis; white-space: nowrap; }
+.intake-panel .url-ingest { margin-top: 10px; padding: 9px 11px; }
+.intake-panel .url-ingest label { display: flex; align-items: center; gap: 9px; }
+.intake-panel .url-ingest label > span { flex: 0 0 auto; }
+.intake-panel .url-ingest input { min-height: 34px; padding: 6px 9px; }
+.intake-panel .url-ingest .hint, .intake-panel > #input-help { display: none; }
+.intake-panel .editor-panel { margin-top: 8px; }
+.intake-panel .editor-panel summary { padding: 7px 0; font-size: .72rem; }
 
 :root[data-theme="light"] {
   color-scheme: light;
