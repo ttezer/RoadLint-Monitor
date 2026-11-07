@@ -250,6 +250,17 @@ body { background: var(--paper); color: var(--ink); }
 .shell > #toast { order: 9; }
 .shell > #runtime-note { order: 10; }
 .app-bar { margin-bottom: 28px; }
+.hero { grid-template-columns: minmax(0, 1fr) minmax(0, 620px); align-items: center; gap: 24px; margin-bottom: 20px; }
+.hero-copy { display: flex; max-width: none; align-items: center; gap: 16px; min-width: 0; }
+.hero-copy .eyebrow { flex: 0 0 auto; margin: 0; white-space: nowrap; }
+.hero-copy .lede { display: none; }
+.hero-copy .hero-actions { flex: 0 0 auto; gap: 10px; margin-left: auto; flex-wrap: nowrap; }
+.hero h1 { flex: 0 1 auto; min-width: 0; margin: 0; overflow: hidden; font-size: clamp(2rem, 3.5vw, 3.35rem); line-height: 1; text-overflow: ellipsis; white-space: nowrap; }
+.boundary-card { display: flex; align-items: center; gap: 12px; min-width: 0; padding: 12px 15px; border-radius: 10px; box-shadow: none; }
+.boundary-label { flex: 0 0 auto; margin: 0; font-size: .6rem; white-space: nowrap; }
+.boundary-card > strong { flex: 0 0 auto; margin: 0; font-size: 1.2rem; white-space: nowrap; }
+.boundary-card > p:not(.boundary-label) { min-width: 0; margin: 0; overflow: hidden; font-size: .72rem; text-overflow: ellipsis; white-space: nowrap; }
+.boundary-rule { flex: 0 0 auto; padding: 0; border: 0; font-size: .68rem; white-space: nowrap; }
 .brand, h1, h2, h3 { color: var(--ink); }
 .brand-mark, .drop-icon { background: var(--teal); color: #061012; }
 .app-context, .lede, .section-lede, .hint, .runtime-note { color: var(--muted); }
@@ -429,3 +440,16 @@ code, pre, textarea, .json-preview, .section-meta, .diagnostic code, .rule-resul
 :root[data-theme="light"] .embedded-map-body .inspector-tab.active { color: var(--ink); }
 :root[data-theme="light"] .embedded-map-body .event-row, :root[data-theme="light"] .embedded-map-body .validation-row, :root[data-theme="light"] .embedded-map-body .evidence-list div { background: #fff; }
 :root[data-theme="light"] .embedded-map-body .event-row:hover, :root[data-theme="light"] .embedded-map-body .event-row:focus-visible, :root[data-theme="light"] .embedded-map-body .validation-row:hover, :root[data-theme="light"] .embedded-map-body .validation-row:focus-visible { background: var(--teal-soft); }
+
+@media (max-width: 900px) {
+  .hero { grid-template-columns: 1fr; }
+  .boundary-card { max-width: none; }
+}
+
+@media (max-width: 620px) {
+  .hero-copy { display: grid; grid-template-columns: 1fr; gap: 8px; }
+  .hero h1 { font-size: clamp(2.25rem, 12vw, 3.6rem); white-space: normal; }
+  .hero-copy .hero-actions { margin-left: 0; flex-wrap: wrap; }
+  .boundary-card { align-items: flex-start; flex-wrap: wrap; gap: 8px 12px; }
+  .boundary-card > p:not(.boundary-label) { flex: 1 1 100%; white-space: normal; }
+}
