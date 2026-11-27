@@ -3,9 +3,9 @@
   "mode": "scheduled-snapshot",
   "source_id": "wsdot",
   "source_url": "https://wzdx.wsdot.wa.gov/api/v4/WorkZoneFeed",
-  "published_at": "2026-11-27T00:03:37.465458+00:00",
+  "published_at": "2026-11-27T07:32:32.363236+00:00",
   "available": true,
-  "sha256": "50af7d0074111de06490be001f6c46ff05623e80f8a74a740493785cc57af40b",
-  "fetched_at": "2026-11-27T00:03:37.350791+00:00",
+  "sha256": "f8358ee281ac52bed780c672de45460836a37424392743eb84fd82ff1178b354",
+  "fetched_at": "2026-11-27T07:32:32.278403+00:00",
   "feature_count": 409
 }
